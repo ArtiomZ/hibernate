@@ -1,8 +1,12 @@
-package com.example.hibernatehw;
+package com.example.hibernatehw.Controller;
 
+import com.example.hibernatehw.Persons.Persons;
+import com.example.hibernatehw.Repository.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
@@ -14,7 +18,7 @@ public class Controller {
     }
 
     @GetMapping("/persons/by-city")
-    public String getPersonsByCity(@RequestParam String city) {
+    public List<String> getPersonsByCity(@RequestParam String city) {
         return repository.getPersonsByCity(city);
     }
 }

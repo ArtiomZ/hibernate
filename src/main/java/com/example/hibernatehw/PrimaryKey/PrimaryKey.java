@@ -1,4 +1,4 @@
-package com.example.hibernatehw;
+package com.example.hibernatehw.PrimaryKey;
 
 import jakarta.persistence.Embeddable;
 import lombok.Data;

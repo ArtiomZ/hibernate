@@ -1,5 +1,6 @@
-package com.example.hibernatehw;
+package com.example.hibernatehw.Persons;
 
+import com.example.hibernatehw.PrimaryKey.PrimaryKey;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
