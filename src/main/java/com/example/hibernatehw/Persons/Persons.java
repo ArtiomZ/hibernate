@@ -17,6 +17,28 @@ public class Persons {
     private String phoneNumber;
     private String cityOfLiving;
 
+    public Persons(PrimaryKey primaryKey, String phoneNumber, String cityOfLiving) {
+        this.primaryKey = primaryKey;
+        this.phoneNumber = phoneNumber;
+        this.cityOfLiving = cityOfLiving;
+    }
+
+    public Persons() {
+
+    }
+
+    public void setPrimaryKey(PrimaryKey primaryKey) {
+        this.primaryKey = primaryKey;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setCityOfLiving(String cityOfLiving) {
+        this.cityOfLiving = cityOfLiving;
+    }
+
     @Override
     public String toString() {
         return "Persons{" +
