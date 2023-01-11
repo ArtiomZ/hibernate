@@ -61,16 +61,19 @@ public class Controller {
                                @RequestParam int age,
                                @RequestBody Body body) {
 
-        Persons persons = null;
+        Persons persons;
         Optional<Persons> opt = personRepository.findById(new PrimaryKey(name, surname, age));
-        personRepository.deleteById(new PrimaryKey(name, surname, age));
+
         if (opt.isPresent()) {
+            personRepository.deleteById(new PrimaryKey(name, surname, age));
             persons = opt.get();
             persons.setPrimaryKey(new PrimaryKey(body.getName(), body.getSurname(), body.getAge()));
             persons.setPhoneNumber(body.getPhoneNumber());
             persons.setCityOfLiving(body.getCityOfLiving());
+        } else {
+            return "user not found";
         }
-        personRepository.saveAndFlush(Objects.requireNonNull(persons));
+        personRepository.saveAndFlush(persons);
 
         return persons.toString();
     }
